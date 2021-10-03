@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://kit.fontawesome.com/0256c52528.js" crossorigin="anonymous"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <style>
+
+    
+    .{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    html{
+        font-size: 62.5%;
+    }
+    .main_div{
+        width: 60rem;
+        height: 80rem;
+        margin: auto;
+        background : #9BB2DD;
+        background : rgba(155, 178, 221, 1);
+        border-style : Solid;
+        border-color : #231F20;
+        border-color : rgba(35, 31, 32, 1);
+        border-width : 1px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .info{
+        text-align: center;
+     
+    }
+    h1{
+        
+        font-family : Futura Md BT;
+        font-size : 60px;
+        color : #231F20;
+        color : rgb(35, 31, 32);
+    }
+    h2,h3{
+        font-family : Futura Bk BT;
+        font-size : 30px;
+        color : #FFFFFF;
+        color : rgb(255, 255, 255);
+    }
+</style>
+</head>
+
+<body>
+    <div class='main_div'>
+        <div class='weather_icon'>
+            <i class="fas fa-sun" style="color: darkorange; font-size: 10rem;"></i>
+        </div>
+        <div class='info'>
+                <h1 id='location'>{%location%}, {%country%}</h1>
+        
+                <h2 id=date></h2>
+        
+            <h1 >{%tempval%} &degC</h1>
+            <h3>Min | {%mintemp%}&degC  Max | {%maxtemp%}&degC</h3>
+        </div>
+    </div>
+<script>
+
+    const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    const d=new Date();
+    console.log(d.getDay());
+    document.getElementById('date').innerHTML=`${days[d.getDay()]} |  ${months[d.getMonth()]} ${d.getDate()} |
+    ${d.toLocaleTimeString()}`;
+</script>
+</body>
+</html>
